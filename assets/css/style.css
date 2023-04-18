@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: aliceblue;
+    background-image: url(../img/fondoDigital.png);
+}
+#listado{
+    padding: 10%;
+    text-align: center;
+}
+.tarjeta{
+    margin: 2%;
+    display: inline-block;
+}
+.img{
+    background-color: white;
+}
+.info-container{
+text-align: center;
+margin: auto;
+border: solid rgb(91, 159, 178) 2px;
+padding: 1%;
+}
+.name-container{
+    background-color: rgb(80, 126, 151);
+    background-image: url(../img/fondoTransp.png);
+    background-size: 100%;
+    color: orange;
+    text-shadow: -2px 0 darkslateblue, 0 2px darkslateblue, 2px 0 darkslateblue, 0 -2px darkslateblue;
+
+}
+.level-container{
+    background-color: rgb(40, 81, 86);
+    background-image: url(../img/pixelTexture.png);
+    background-size: 100%;
+    color: white;
+    text-shadow: -1px 0 rgb(91, 159, 178), 0 1px rgb(91, 159, 178), 1px 0 rgb(91, 159, 178), 0 -1px rgb(91, 159, 178);
+    font-size: 1.5rem;
+}
+img{
+    width: 100%;
+}
