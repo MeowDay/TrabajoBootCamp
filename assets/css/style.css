@@ -5,10 +5,27 @@
 body{
     background-color: aliceblue;
     background-image: url(../img/fondoDigital.png);
+    background-repeat: no-repeat;
 }
+nav{
+    background-color: rgb(61, 100, 139);
+    height: 100px;
+}
+/*----tarjetas y formato API----*/
 #listado{
     padding: 10%;
     text-align: center;
+}
+.imgNvl-container{
+    margin: auto;
+    background-color: rgb(168, 255, 252);
+    border-radius: 50%;
+    height: 100%;
+    border: solid 1px rgb(146, 203, 232);
+    display: inline-block;
+}
+.hidden{
+    display: none;
 }
 .tarjeta{
     margin: 2%;
