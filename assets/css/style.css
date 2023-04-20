@@ -8,12 +8,91 @@ body{
     background-repeat: no-repeat;
 }
 nav{
-    background-color: rgb(61, 100, 139);
+    background-image: url(../img/barraDig.jpg);
     height: 100px;
 }
+@font-face {
+    font-family: "pixels";
+    src: url(../fonts/DigimonBasic.ttf) format("truetype");
+}
+.nav-link{
+    color: white;
+    font-size: 3rem;
+    height: 1px;
+    margin-top: 0;
+    margin-bottom: 40%;
+    font-family: "pixels", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: -1px 0 rgb(91, 159, 178), 0 1px rgb(91, 159, 178), 1px 0 rgb(91, 159, 178), 0 -1px rgb(91, 159, 178);
+}
+.navbar-nav{
+    margin-bottom: 10%;
+}
+.navbar-toggler{
+    color: rgb(50, 75, 144);
+    background-color: cyan;
+}
+li{
+    background-color: black;
+    margin-right: 30%;
+    margin-left: 10%;
+
+}
+.navbar-brand{
+    width: 15%;
+}
+#logoDig{
+
+    margin-top: 10%;
+}
+.navbar-toggler-icon{
+    color: rgb(37, 59, 97);
+}
+.bar-container {
+    position: relative;
+    height: 5px;
+    margin-left: auto;
+  }
+  .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #3498db;
+  }
+  
+  .light {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 20px #3498db;
+    animation: move 2s ease-in-out infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      left: +9%;
+      opacity: 1;
+    }
+    30%{
+        background-color: orange;
+    }
+    50% {
+      left: calc(100% + 20px);
+      opacity: 0;
+    }
+    100% {
+      left: -20px;
+      opacity: 0;
+    }
+  }
 /*----tarjetas y formato API----*/
 #listado{
-    padding: 10%;
+    margin-top: 5%;
     text-align: center;
 }
 .imgNvl-container{
@@ -21,8 +100,9 @@ nav{
     background-color: rgb(168, 255, 252);
     border-radius: 50%;
     height: 100%;
-    border: solid 1px rgb(146, 203, 232);
+    border: solid 5px cyan;
     display: inline-block;
+    margin-left: 5%;
 }
 .hidden{
     display: none;
@@ -44,7 +124,7 @@ padding: 1%;
     background-color: rgb(80, 126, 151);
     background-image: url(../img/fondoTransp.png);
     background-size: 100%;
-    color: orange;
+    color: rgb(255, 233, 172);
     text-shadow: -2px 0 darkslateblue, 0 2px darkslateblue, 2px 0 darkslateblue, 0 -2px darkslateblue;
 
 }
