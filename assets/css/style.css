@@ -1,112 +1,205 @@
+/*ETIQUETAS MAS GENERALES!*/
 *{
     margin: 0;
     padding: 0;
+    caret-color: transparent;
 }
 body{
     background-color: aliceblue;
     background-image: url(../img/fondoDigital.png);
     background-repeat: no-repeat;
+    
 }
 nav{
     background-image: url(../img/barraDig.jpg);
     height: 100px;
+    font-family: "pixels", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 @font-face {
     font-family: "pixels";
     src: url(../fonts/DigimonBasic.ttf) format("truetype");
 }
+img{
+    width: 100%;
+}
+audio{
+    background-color: cyan;
+}
+h1{
+    font-size: 7rem;
+    -webkit-text-stroke: 3px darkturquoise;
+    color: white;
+    margin-top: 3%;
+}
+/*--------------------------------------------------------*/
 .nav-link{
     color: white;
     font-size: 3rem;
     height: 1px;
     margin-top: 0;
-    margin-bottom: 40%;
-    font-family: "pixels", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 10%;
     text-shadow: -1px 0 rgb(91, 159, 178), 0 1px rgb(91, 159, 178), 1px 0 rgb(91, 159, 178), 0 -1px rgb(91, 159, 178);
 }
-.navbar-nav{
-    margin-bottom: 10%;
+.nav-item{
+    background-color: black;
+    padding-bottom: 2%;
+    border-radius: 5px;
+}
+.dropdown-item{
+    color: cyan;
+    font-size: 2rem;
+    background-color: rgb(24, 24, 24);
+}
+.audioTxt{
+    font-size: 2rem;
+    background-color: rgb(43, 43, 43);
+    color: cyan;
 }
 .navbar-toggler{
     color: rgb(50, 75, 144);
     background-color: cyan;
 }
-li{
-    background-color: black;
-    margin-right: 30%;
-    margin-left: 10%;
-
-}
 .navbar-brand{
-    width: 15%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 #logoDig{
-
-    margin-top: 10%;
+    width: 220px;
 }
 .navbar-toggler-icon{
     color: rgb(37, 59, 97);
 }
-.bar-container {
+/*------AQUI VAN LAS ANIMACIONES!!*/
+.bar-container{
     position: relative;
     height: 5px;
     margin-left: auto;
-  }
-  .bar {
+}
+.bar{
     position: absolute;
     top: 0;
     left: 0;
     width: 0%;
     height: 100%;
     background-color: #3498db;
-  }
-  
-  .light {
+}
+.light{
     position: absolute;
     top: 50%;
     left: 0;
     transform: translate(-50%, -50%);
-    width: 10%;
+    width: 100px;
     height: 100%;
     background-color: #fff;
     box-shadow: 0 0 20px #3498db;
     animation: move 2s ease-in-out infinite;
-  }
+}
   
-  @keyframes move {
+@keyframes move {
     0% {
-      left: +9%;
+      left: -9%;
       opacity: 1;
     }
     30%{
         background-color: orange;
     }
     50% {
-      left: calc(100% + 20px);
+      left: calc(90%);
       opacity: 0;
     }
     100% {
-      left: -20px;
+      left: 20px;
       opacity: 0;
     }
+}
+/*--------------------*/
+.anillo{
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #ffffff;
+    animation: anillo 0.5s ease-in-out infinite;
   }
+  @keyframes anillo {
+    0% {
+      box-shadow: 0px 0px 0px 0px cyan;
+    }
+    50% {
+      box-shadow: 0px 0px 0px 10px orange;
+    }
+    100% {
+      box-shadow: 0px 0px 0px 0px cyan;
+    }
+  }
+/*----------------------------------------------*/
+
+.title{
+    text-align: center;
+    font-family: "pixels", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.modal-header{
+    background-color: rgb(13, 18, 48);
+    color: cyan;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    border-top: solid 2px cyan;
+    border-left: solid 2px cyan;
+    border-right: solid 2px cyan;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#infoBoton{
+    font-family: monospace, 'Courier New', Courier;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    padding: 1px;
+    background-color: rgb(13, 18, 48);
+    color: cyan;
+    border: none;
+    margin-right: 5%;
+
+}
+.modal-body{
+    font-size: 1.3rem;
+    border-bottom: solid 2px cyan;
+    border-left: solid 2px cyan;
+    border-right: solid 2px cyan;;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: aliceblue;
+}
 /*----tarjetas y formato API----*/
 #listado{
     margin-top: 5%;
     text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .imgNvl-container{
-    margin: auto;
+    margin: 1%;
     background-color: rgb(168, 255, 252);
     border-radius: 50%;
+    width: 200px;
     height: 100%;
     border: solid 5px cyan;
     display: inline-block;
-    margin-left: 5%;
+    
 }
 .hidden{
     display: none;
 }
+.btn-close {
+    filter: invert(1);
+    opacity: 1;
+  }
 .tarjeta{
     margin: 2%;
     display: inline-block;
@@ -115,10 +208,10 @@ li{
     background-color: white;
 }
 .info-container{
-text-align: center;
-margin: auto;
-border: solid rgb(91, 159, 178) 2px;
-padding: 1%;
+    text-align: center;
+    margin: auto;
+    border: solid rgb(91, 159, 178) 2px;
+    padding: 1%;
 }
 .name-container{
     background-color: rgb(80, 126, 151);
@@ -136,6 +229,50 @@ padding: 1%;
     text-shadow: -1px 0 rgb(91, 159, 178), 0 1px rgb(91, 159, 178), 1px 0 rgb(91, 159, 178), 0 -1px rgb(91, 159, 178);
     font-size: 1.5rem;
 }
-img{
-    width: 100%;
+.fuente{
+    font-family: "pixels";
+    font-size: 3rem;
+}
+#hints{
+    border: none;
+    padding: 3px;
+    font-family: "pixels";
+    font-size: 2rem;
+    margin-top: 3%;
+    background-color: darkcyan;
+    color: white;
+    border: solid 1px orange;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    
+}
+.textobrillito{
+    animation: muevamelpollo 1s infinite;
+}
+@keyframes muevamelpollo {
+    50%{color: rgb(172, 255, 255);}
+    
+}
+#textoInformativo{
+    font-family: pixels, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin: 2;
+    color: darkcyan;
+}
+.parpadeoNaranja{
+    animation: muevelo 3s infinite;
+}
+@keyframes muevelo {
+    50% {
+      background-color: orange;
+}
+}
+.brillitofiltro{
+    animation: filtralowashin 2s infinite;
+}
+@keyframes filtralowashin{
+    50%{
+        filter: saturate(5) hue-rotate(180deg);
+    }
 }

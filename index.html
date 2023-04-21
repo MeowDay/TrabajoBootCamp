@@ -6,81 +6,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/js/script.js">
   <title>Examen M2</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img id="logoDig" src="./assets/img/logo.png" alt=""></a>
-      <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img id="logoDig" src="./assets/img/logo.png" onmouseover="filtros(this)" onmouseout="nofiltros(this)"  ondblclick="nobravehearth(this)" onclick=" bravehearth(this)" alt=""></a>
+      <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="escondelogo()">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">WIKI</a>
+            <a class="nav-link active listElm" aria-current="page" href="https://digimon.fandom.com/es/wiki/Digimon_Wiki" target="_blank" rel="noreferrer noopener">fanWIKI</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link listElm" href="https://digimon.net/" target="_blank" rel="noreferrer noopener">Oficial</a>
           </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link listElm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            >> openings
+          </a>
+          <ul class="dropdown-menu">
+            <li class="listItm"><p class="audioTxt">Op1 Butterfly</p><audio src="./assets/audio/butterfly.mp3" controls></audio>  </li>
+            <li class="listItm"><p class="audioTxt">Op2 Target</p><audio src="./assets/audio/target.mp3" controls></audio> </li>
+            <li class="listItm"><p class="audioTxt">Op3 The Biggest Dream</p><audio src="./assets/audio/biggestDream.mp3" controls></li>
+          </ul>
+        </li>
         </ul>
-        <div class="bar-container col-xl-7 col-lg-4 col-sm-1 col-xs-0">
+        <div class="bar-container col-6">
           <div class="bar"></div>
           <div class="light"></div>
-        </div>
-       
+        </div>   
       </div>
     </div>
   </nav>
-
+  
   <main>
+    <div class="title" col-12>
+      <h1 class="textobrillito">DIGIMON NVL</h1>
+      <h2>Selecciona el nivel para visualizarlo</h2>
+    </div>
+<!------------ MODAL 1-------------------------------------------------------------------------------------------->
+    <button type="button" id="infoBoton" data-bs-toggle="modal" data-bs-target="#modal1"><b>i</b></button>
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <p>INFO</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>→ Instale una fuente similar a la del logo de Digimon. <br>
+            → Cada boton invoca un API con extensión diferente para <br>&emsp;mostrar distintos niveles. <br>
+            → Hay diferentes animaciones hechas en CSS.<br>
+            → Hay cuatro eventos, "onclick, ondblclick, onmouseover y onmouseout". <br>
+            → La responsividad fue implementada mayoritariamente a <br> &emsp;traves de bootstrap.<br>
+            →Agregue varios elementos para hacer la página llamativa y <br> &emsp;entretenida de usar.<br>
+          </p>
+        </div>
+      </div>
+    </div>
+<!---------------------------------------------------------------------------------------------------------------->
     <div id="listado">
-
-      <div id="bttnFresh" class="imgNvl-container col-xl-1 col-lg-2 col-md-3 col-sm-6 col-xs-12" role="button" onclick="mostrarFresh()">
-        <img src="./assets/img/fresh.png" class="imgNvl" id="imgFresh" alt="Nivel Fresh">
+      <div id="bttnFresh" class="imgNvl-container" role="button" onclick="mostrarFresh()" onmouseover="anillo(this)" onmouseout="noanillo(this)">
+        <img src="./assets/img/fresh.png" class="imgNvl" id="imgFresh" alt="Nivel Fresh"  >
       </div>
       <div id="fresh" class="nvl hidden">
       </div>
 
-      <div id="bttnTraining" class="imgNvl-container col-xl-1 col-lg-2 col-md-3 col-sm-6 col-xs-12" role="button" onclick="mostrarTraining()">
+      <div id="bttnTraining" class="imgNvl-container" role="button" onclick="mostrarTraining()" onmouseover="anillo(this)" onmouseout="noanillo(this)">
         <img src="./assets/img/training.png" class="imgNvl" alt="Nivel on Training">
       </div>
       <div id="training" class="nvl hidden">
       </div>
          
-      <div id="bttnRookie" class="imgNvl-container col-xl-1 col-lg-2 col-md-3 col-sm-6 col-xs-12" role="button" onclick="mostrarRookie()">
+      <div id="bttnRookie" class="imgNvl-container" role="button" onclick="mostrarRookie()" onmouseover="anillo(this)" onmouseout="noanillo(this)">
         <img src="./assets/img/rookie.png" class="imgNvl" alt="Nivel Rookie">
       </div>
       <div id="rookie" class="nvl hidden">
       </div>
          
-      <div id="bttnChampion" class="imgNvl-container col-xl-1 col-lg-2 col-md-3 col-sm-6 col-xs-12" role="button" onclick="mostrarChampion()">
+      <div id="bttnChampion" class="imgNvl-container" role="button" onclick="mostrarChampion()" onmouseover="anillo(this)" onmouseout="noanillo(this)">
         <img src="./assets/img/champion.png" class="imgNvl" alt="">
       </div>
       <div id="champion" class="nvl hidden">
       </div>
        
-      <div id="bttnMega" class="imgNvl-container col-xl-1 col-lg-2 col-md-3 col-sm-6 col-xs-12" role="button" onclick="mostrarMega()">
+      <div id="bttnMega" class="imgNvl-container" role="button" onclick="mostrarMega()" onmouseover="anillo(this)" onmouseout="noanillo(this)">
         <img src="./assets/img/mega.png" class="imgNvl" alt="">
       </div>
       <div id="mega" class="nvl hidden">
       </div>
 
-      <div id="bttnUltimate" class="imgNvl-container col-xl-1 col-lg-2 col-md-3 col-sm-6 col-xs-12" role="button" onclick="mostrarUltimate()">
+      <div id="bttnUltimate" class="imgNvl-container" role="button" onclick="mostrarUltimate()" onmouseover="anillo(this)" onmouseout="noanillo(this)">
         <img src="./assets/img/ultimate.png" class="imgNvl" alt="">
       </div>
       <div id="ultimate" class="nvl hidden">
       </div>
       
     </div>
+<!------------ MODAL 2-------------------------------------------------------------------------------------------->
+<center>
+<button type="button" class="parpadeoNaranja" id="hints" data-bs-toggle="modal" data-bs-target="#modal2"><b>INFORMACION DEL SITIO</b></button>
+</center>
+<div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header fuente">
+      <p>INFORMACIÓN DEL SITIO</p>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <p id="textoInformativo"> 
+        Las Digievoluciones ocurren según las estadisticas de cada digimon, pudiendo entrar en distintas ramas evolutivas. La mayor parte de estas son reversibles; 
+        en este sitio puedes ver los stages evolutivos de la serie Digimon; para ello solo debes seleccionar el nivel que deseas ver.
+      </p>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------->
+
+
   </main>
   
 
   <!--bootstrap, jquery script-->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
+
+
+
  
 </body>
 </html>

@@ -11,7 +11,29 @@ let bttnRookie =document.querySelector("#bttnRookie")
 let bttnChampion =document.querySelector("#bttnChampion")
 let bttnMega =document.querySelector("#bttnMega")
 let bttnUltimate =document.querySelector("#bttnUltimate")
-
+let logo = document.querySelector("#logoDig")
+let sonido= new Audio("./assets/audio/braveHearth.ogg")
+function anillo(megustanlosgatos){
+  megustanlosgatos.classList.add("anillo")
+}
+function noanillo(megustanlosgatos){
+  megustanlosgatos.classList.remove("anillo")
+}
+function filtros(panconpalta){
+  panconpalta.classList.add("brillitofiltro")
+}
+function nofiltros(panconchancho){
+  panconchancho.classList.remove("brillitofiltro")
+}
+function bravehearth(){
+  sonido.play();
+}
+function nobravehearth(){
+  sonido.pause();
+}
+function escondelogo(){
+  logo.classList.toggle("hidden")
+}
 function mostrarFresh(){
   fresh.classList.toggle("hidden")
   bttnTraining.classList.toggle("hidden")
@@ -19,6 +41,8 @@ function mostrarFresh(){
   bttnChampion.classList.toggle("hidden")
   bttnMega.classList.toggle("hidden")
   bttnUltimate.classList.toggle("hidden")
+  let sonido = new Audio("./assets/audio/boton.ogg")
+  sonido.play();
 }
 function mostrarTraining(){
   training.classList.toggle("hidden")
@@ -27,6 +51,8 @@ function mostrarTraining(){
   bttnChampion.classList.toggle("hidden")
   bttnMega.classList.toggle("hidden")
   bttnUltimate.classList.toggle("hidden")
+  let sonido = new Audio("./assets/audio/boton.ogg")
+  sonido.play();
 }
 function mostrarRookie(){
   rookie.classList.toggle("hidden")
@@ -35,6 +61,8 @@ function mostrarRookie(){
   bttnChampion.classList.toggle("hidden")
   bttnMega.classList.toggle("hidden")
   bttnUltimate.classList.toggle("hidden")
+  let sonido = new Audio("./assets/audio/boton.ogg")
+  sonido.play();
 }
 function mostrarChampion(){
   champion.classList.toggle("hidden")
@@ -43,6 +71,8 @@ function mostrarChampion(){
   bttnRookie.classList.toggle("hidden")
   bttnMega.classList.toggle("hidden")
   bttnUltimate.classList.toggle("hidden")
+  let sonido = new Audio("./assets/audio/boton.ogg")
+  sonido.play();
 }
 function mostrarMega(){
   mega.classList.toggle("hidden")
@@ -51,6 +81,8 @@ function mostrarMega(){
   bttnRookie.classList.toggle("hidden")
   bttnChampion.classList.toggle("hidden")
   bttnUltimate.classList.toggle("hidden")
+  let sonido = new Audio("./assets/audio/boton.ogg")
+  sonido.play();
 }
 function mostrarUltimate(){
   ultimate.classList.toggle("hidden")
@@ -59,14 +91,9 @@ function mostrarUltimate(){
   bttnRookie.classList.toggle("hidden")
   bttnChampion.classList.toggle("hidden")
   bttnMega.classList.toggle("hidden")
+  let sonido = new Audio("./assets/audio/boton.ogg")
+  sonido.play();
 }
-
-
-
-
-
-
-
 
 //-----Digimon nvl in fresh-----
 var url1 = "https://digimon-api.vercel.app/api/digimon/level/fresh" 
@@ -77,7 +104,7 @@ fetch(url1)
     for (temp of datos) {
             fresh.innerHTML +=  `
           <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
-            <div class="img info-container">
+            <div class="img info-container" onmouseover= filtros(this) onmouseout=nofiltros(this)>
                 <img src="${temp.img}" alt="poster">
             </div>
             <div class="info-container name-container">
@@ -99,7 +126,7 @@ fetch(url2)
             training.innerHTML +=  `
           <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
             <div class="img info-container">
-                <img src="${temp.img}" alt="poster">
+                <img src="${temp.img}" onmouseover= filtros(this) onmouseout=nofiltros(this) alt="poster">
             </div>
             <div class="info-container name-container">
                 <h3>${temp.name}</h3>
@@ -120,7 +147,7 @@ fetch(url3)
             rookie.innerHTML +=  `
           <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
             <div class="img info-container">
-                <img src="${temp.img}" alt="poster">
+                <img src="${temp.img}" alt="poster" onmouseover= filtros(this) onmouseout=nofiltros(this)>
             </div>
             <div class="info-container name-container">
                 <h3>${temp.name}</h3>
@@ -142,7 +169,7 @@ fetch(url4)
             champion.innerHTML +=  `
           <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
             <div class="img info-container">
-                <img src="${temp.img}" alt="poster">
+                <img src="${temp.img}" alt="poster" onmouseover= filtros(this) onmouseout=nofiltros(this)>
             </div>
             <div class="info-container name-container">
                 <h3>${temp.name}</h3>
@@ -164,7 +191,7 @@ fetch(url5)
             mega.innerHTML +=  `
           <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
             <div class="img info-container">
-                <img src="${temp.img}" alt="poster">
+                <img src="${temp.img}" alt="poster" onmouseover= filtros(this) onmouseout=nofiltros(this)>
             </div>
             <div class="info-container name-container">
                 <h3>${temp.name}</h3>
@@ -186,7 +213,7 @@ fetch(url6)
             ultimate.innerHTML +=  `
           <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
             <div class="img info-container">
-                <img src="${temp.img}" alt="poster">
+                <img src="${temp.img}" alt="poster" onmouseover= filtros(this) onmouseout=nofiltros(this)>
             </div>
             <div class="info-container name-container">
                 <h3>${temp.name}</h3>
