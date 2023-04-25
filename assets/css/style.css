@@ -72,6 +72,7 @@ h1{
 .navbar-toggler-icon{
     color: rgb(37, 59, 97);
 }
+
 /*------AQUI VAN LAS ANIMACIONES!!*/
 .bar-container{
     position: relative;
@@ -270,6 +271,7 @@ h1{
 }
 .brillitofiltro{
     animation: filtralowashin 2s infinite;
+    width: 300%;
 }
 @keyframes filtralowashin{
     50%{
