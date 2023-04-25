@@ -271,7 +271,7 @@ h1{
 }
 .brillitofiltro{
     animation: filtralowashin 2s infinite;
-    width: 300%;
+    width: 150%;
 }
 @keyframes filtralowashin{
     50%{
