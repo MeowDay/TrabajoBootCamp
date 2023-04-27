@@ -22,6 +22,9 @@ function noanillo(megustanlosgatos){
 function filtros(panconpalta){
   panconpalta.classList.add("brillitofiltro")
 }
+function agrandamelo(chanchitodetierra){
+  chanchitodetierra.classList.toggle("clickacio")
+}
 function nofiltros(panconchancho){
   panconchancho.classList.remove("brillitofiltro")
 }
@@ -103,7 +106,7 @@ fetch(url1)
 .then(datos => {
     for (temp of datos) {
             fresh.innerHTML +=  `
-          <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
+          <div class="tarjeta col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12" onclick =agrandamelo(this)>
             <div class="img info-container" onmouseover= filtros(this) onmouseout=nofiltros(this)>
                 <img src="${temp.img}" alt="poster">
             </div>

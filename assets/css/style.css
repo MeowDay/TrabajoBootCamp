@@ -13,6 +13,10 @@ body{
 nav{
     background-image: url(../img/barraDig.jpg);
     height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     font-family: "pixels", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 @font-face {
@@ -271,10 +275,19 @@ h1{
 }
 .brillitofiltro{
     animation: filtralowashin 2s infinite;
-    width: 150%;
+}
+.pseudomodal{
+   position: absolute;
+   
 }
 @keyframes filtralowashin{
     50%{
         filter: saturate(5) hue-rotate(180deg);
     }
+}
+@media (max-width:304px) {
+    .arreglancho{width: 110%;}
+}
+@media(max-width:280px){
+    .arreglancho2{width: 120%;    }
 }
